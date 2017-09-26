@@ -1,0 +1,584 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="800px" height="600px"
+     xmlns="http://www.w3.org/2000/svg"
+     xmlns:xhtml="http://www.w3.org/1999/xhtml"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     xmlns:a="http://www.adobe.com/svg10-extensions" a:timeline="independent"
+     onload="top.load(evt)">
+
+  <defs>
+    <clipPath id="gameareaclip">
+      <rect x="20" y="20" width="600" height="560"/>
+    </clipPath>
+    <pattern id="background_pattern" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+      <rect width="20" height="20" style="fill:rgb(197,209,214)"/>
+      <circle cx="10" cy="10" r="8" style="fill:rgb(185,236,255)"/>
+    </pattern>
+    <radialGradient id="player_color">
+      <stop offset="0.0" style="stop-color:yellow;stop-opacity:1"/>
+      <stop offset="0.8" style="stop-color:yellow;stop-opacity:1"/>
+      <stop offset="1.0" style="stop-color:orange;stop-opacity:1"/>
+    </radialGradient>
+	
+	<g id="monster">
+		<path transform="translate(0 40) scale(1 -1)"
+			d="M0 30 C0 10 6.66667 0 20 0 C33.3333 0 40 10 40 30 L40 40 L35 33 L30 40 L25 33 L20
+				40 L15 33 L10 40 L5 33 L0 40 L0 30"
+			 style="fill:rgb(234,192,134);fill-opacity:1;stroke:rgb(0,0,0);stroke-width:2"/>
+		<circle cx="12" cy="20" r="5" style="fill:rgb(255,255,0);stroke:rgb(0,0,0);stroke-width:2">
+			<animateTransform attributeName="transform"
+				attributeType="XML"
+				type="scale"
+				by="1"
+				dur="1s"
+				repeatCount="indefinite"/>
+		</circle>
+		<circle cx="28" cy="20" r="5" style="fill:rgb(255,255,0);stroke:rgb(0,0,0);stroke-width:2">
+			<animateTransform attributeName="transform"
+				attributeType="XML"
+				type="scale"
+				by="1"
+				dur="1s"
+				repeatCount="indefinite"/>
+		</circle>
+		<line x1="7" y1="9" x2="17" y2="10" style="fill:none;stroke:rgb(0,0,0);stroke-width:1"/>
+		<line x1="25" y1="11" x2="34" y2="10"
+			 style="fill:none;stroke:rgb(0,0,0);stroke-width:1"/>
+		<line x1="20" y1="21" x2="17" y2="29"
+			 style="fill:none;stroke:rgb(0,0,0);stroke-width:1"
+			transform="translate(20 21) scale(-1.38095 1) translate(-20 -21)"/>
+		<line x1="17" y1="29" x2="24" y2="29"
+			 style="fill:none;stroke:rgb(0,0,0);stroke-width:1"/>
+		<line x1="19" y1="34" x2="13" y2="33"
+			 style="fill:none;stroke:rgb(255,165,0);stroke-width:2"
+			transform="translate(19 33.5) scale(-1.02381 1) translate(-19 -33.5)"/>
+		<line x1="13" y1="33" x2="2" y2="31"
+			 style="fill:none;stroke:rgb(255,255,255);stroke-width:2"
+			transform="translate(12.1429 -0.285714) translate(13 32) scale(-0.818182 1) translate(-13 -32)"/>
+	</g>
+	
+	<g id="monsterboss">
+		<path transform="translate(0 40) scale(1 -1)"
+			d="M0 30 C0 10 6.66667 0 20 0 C33.3333 0 40 10 40 30 L40 40 L35 33 L30 40 L25 33 L20
+				40 L15 33 L10 40 L5 33 L0 40 L0 30"
+			 style="fill:rgb(56,34,14);fill-opacity:1;stroke:rgb(0,0,0);stroke-width:2"/>
+		<circle cx="12" cy="20" r="5" style="fill:rgb(255,0,0);stroke:rgb(0,0,0);stroke-width:2">
+			 <animateTransform attributeName="transform"
+                          attributeType="XML"
+                          type="scale"
+						  by="1"
+                          dur="1s"
+                          repeatCount="indefinite"/>
+		</circle>
+		<circle cx="28" cy="20" r="5" style="fill:rgb(255,0,0);stroke:rgb(0,0,0);stroke-width:2">
+			<animateTransform attributeName="transform"
+                          attributeType="XML"
+                          type="scale"
+						  by="1"
+                          dur="1s"
+                          repeatCount="indefinite"/>
+		</circle>
+		
+		<line x1="7" y1="9" x2="17" y2="10" style="fill:none;stroke:rgb(0,0,0);stroke-width:1"/>
+		<line x1="25" y1="11" x2="34" y2="10"
+			 style="fill:none;stroke:rgb(0,0,0);stroke-width:1"/>
+		<line x1="20" y1="21" x2="17" y2="29"
+			 style="fill:none;stroke:rgb(0,0,0);stroke-width:1"
+			transform="translate(20 21) scale(-1.38095 1) translate(-20 -21)"/>
+		<line x1="17" y1="29" x2="24" y2="29"
+			 style="fill:none;stroke:rgb(0,0,0);stroke-width:1"/>
+		<line x1="19" y1="34" x2="13" y2="33"
+			 style="fill:none;stroke:rgb(255,165,0);stroke-width:2"
+			transform="translate(19 33.5) scale(-1.02381 1) translate(-19 -33.5)"/>
+		<line x1="13" y1="33" x2="2" y2="31"
+			 style="fill:none;stroke:rgb(255,255,255);stroke-width:2"
+			transform="translate(12.1429 -0.285714) translate(13 32) scale(-0.818182 1) translate(-13 -32)"/>
+	</g>
+	
+    <g id="bullet">
+      <circle cx="5" cy="5" r="5" style="fill:red"/>
+      <circle cx="6" cy="3" r="1" style="fill:pink"/>
+    </g>
+	
+	<g id="boss_bullet">
+      <circle cx="5" cy="5" r="5" style="fill:blue"/>
+      <circle cx="6" cy="3" r="1" style="fill:lightblue"/>
+    </g>
+    
+    <g id="user">
+    	<text id="nval" x="0" y="0" style="fill:red;font-size:17px;text-anchor:middle">Anonymous</text>
+    </g>
+	
+	<g id="reward">
+		<rect x="0" y="0" width="10" height="10"
+			 style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1"/>
+		<rect x="1" y="4" width="8" height="2"
+			 style="fill:rgb(255,0,0);stroke:rgb(255,0,0);stroke-width:1"/>
+		<rect x="4" y="1" width="2" height="8"
+			 style="fill:rgb(255,0,0);stroke:rgb(255,0,0);stroke-width:1"/>
+	</g>
+	
+	<linearGradient id="gra" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:rgb(255,0,0);stop-opacity:1" />
+      <stop offset="100%" style="stop-color:rgb(0,0,255);stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <rect width="100%" height="100%" style="fill:url(#background_pattern);stroke:orange;stroke-width:4" />
+
+  <rect x="20" y="20" width="600" height="560" style="fill:black;stroke:red;stroke-width:5" />
+
+  
+
+    <!-- score, timer, bullet_num -->
+    <g transform="translate(640, 40)">
+      <text x="70" y="0"
+       style="fill:black;font-size:25px;font-weight:bold;text-anchor:middle">
+        Score:
+      </text>
+      <rect x="0" y="10" width="140" height="35" style="fill:white" />
+      <text id="score" x="70" y="36"
+       style="fill:orange;font-size:25px;text-anchor:middle">0</text>
+    </g>
+    
+    <g transform="translate(640, 160)">
+          <text x="70" y="0" style="fill:blakc;font-size:25px;font-weight:bold;text-anchor:middle">
+            Time:
+          </text>
+          <rect x="0" y="10" width="140" height="35" style="fill:white;" />
+          <rect id="timer_bar" x="0" y="10" width="140" height="35" style="fill:red;fill-opacity:0.6" />
+          <text id="timer_text" x="70" y="36"
+           style="fill:orange;font-size:25px;text-anchor:middle">60</text>
+    </g>
+	
+	<g transform="translate(640, 280)">
+          <text x="70" y="0" style="fill:black;font-size:25px;font-weight:bold;text-anchor:middle">
+            Bullets:
+          </text>
+          <rect x="0" y="10" width="140" height="35" style="fill:white;" />
+          <text id="bullet_text" x="70" y="36"
+           style="fill:orange;font-size:25px;text-anchor:middle">8</text>
+    </g>
+   
+
+  <g style="clip-path:url(#gameareaclip)">
+    <g transform="translate(20,20)">
+      <g id="gamearea" transform="translate(0,0)" width="600" height="560">
+        <rect x="0" y="0" width="600" height="560" style="fill:rgb(227,247,255)" />
+
+        <g id="platforms">
+            <!-- 60 -->
+            <rect style="fill:rgb(92,129,116)" width="60" height="20" x="0" y="60"/>
+
+            <!-- 80 -->
+            <rect style="fill:rgb(92,129,116)" width="20" height="20" x="40" y="80"/>
+
+            <!-- 100 disappear -->
+			<rect style="fill:rgb(92,129,116)" width="90" height="20" x="40" y="100"/>
+			<rect style="fill:rgb(92,129,116)" width="200" height="20" x="200" y="100"/>
+			<rect style="fill:rgb(92,129,116)" width="20" height="20" x="470" y="100"/>
+			
+            <!-- 120 -->
+            <rect style="fill:rgb(92,129,116)" width="20" height="20" x="60" y="120"/>
+            <rect style="fill:rgb(92,129,116)" width="40" height="20" x="220" y="120"/>
+
+            <!-- 140 -->
+            <rect style="fill:rgb(92,129,116)" width="40" height="20" x="220" y="140"/>
+            <rect style="fill:rgb(92,129,116)" width="40" height="20" x="560" y="140"/>
+
+            <!-- 160 -->
+            <rect style="fill:rgb(92,129,116)" width="120" height="20" x="180" y="160"/>
+            <rect style="fill:rgb(92,129,116)" width="60" height="20" x="540" y="160"/>
+
+            <!-- 180 -->
+            <rect style="fill:rgb(92,129,116)" width="20" height="20" x="0" y="180"/>
+            <rect style="fill:rgb(92,129,116)" width="20" height="20" x="100" y="180"/>
+            <rect style="fill:rgb(92,129,116)" width="20" height="20" x="380" y="180"/>
+            <rect style="fill:rgb(92,129,116)" width="80" height="20" x="520" y="180"/>
+
+            <!-- 200 -->
+            <rect style="fill:rgb(92,129,116)" width="20" height="20" x="0" y="200"/>
+            <rect style="fill:rgb(92,129,116)" width="40" height="20" x="80" y="200"/>
+            <rect style="fill:rgb(92,129,116)" width="80" height="20" x="360" y="200"/>
+
+            <!-- 220 -->
+            <rect style="fill:rgb(92,129,116)" width="160" height="20" x="0" y="220"/>
+            <rect style="fill:rgb(92,129,116)" width="140" height="20" x="320" y="220"/>
+
+            <!-- 240 -->
+            <rect style="fill:rgb(92,129,116)" width="20" height="20" x="240" y="240"/>
+            <rect style="fill:rgb(92,129,116)" width="160" height="20" x="340" y="240"/>
+
+            <!-- 260 -->
+            <rect style="fill:rgb(92,129,116)" width="60" height="20" x="220" y="260"/>
+
+            <!-- 280 -->
+            <rect style="fill:rgb(92,129,116)" width="100" height="20" x="200" y="280"/>
+            <rect style="fill:rgb(92,129,116)" width="40" height="20" x="560" y="280"/>
+
+            <!-- 300 -->
+            <rect style="fill:rgb(92,129,116)" width="100" height="20" x="120" y="300"/>
+            <rect style="fill:rgb(92,129,116)" width="40" height="20" x="280" y="300"/>
+            <rect style="fill:rgb(92,129,116)" width="100" height="20" x="500" y="300"/>
+
+            <!-- 320 -->
+            <rect style="fill:rgb(92,129,116)" width="40" height="20" x="0" y="320"/>
+            <rect style="fill:rgb(92,129,116)" width="60" height="20" x="280" y="320"/>
+            <rect style="fill:rgb(92,129,116)" width="20" height="20" x="380" y="320"/>
+
+            <!-- 340 -->
+            <rect style="fill:rgb(92,129,116)" width="60" height="20" x="0" y="340"/>
+            <rect style="fill:rgb(92,129,116)" width="20" height="20" x="320" y="340"/>
+            <rect style="fill:rgb(92,129,116)" width="60" height="20" x="380" y="340"/>
+
+            <!-- 360 -->
+            <rect style="fill:rgb(92,129,116)" width="120" height="20" x="0" y="360"/>
+            <rect style="fill:rgb(92,129,116)" width="20" height="20" x="320" y="360"/>
+            <rect style="fill:rgb(92,129,116)" width="120" height="20" x="380" y="360"/>
+
+            <!-- 380 -->
+            <rect style="fill:rgb(92,129,116)" width="100" height="20" x="0" y="380"/>
+            <rect style="fill:rgb(92,129,116)" width="20" height="20" x="220" y="380"/>
+            <rect style="fill:rgb(92,129,116)" width="20" height="20" x="580" y="380"/>
+
+            <!-- 400 -->
+            <rect style="fill:rgb(92,129,116)" width="80" height="20" x="180" y="400"/>
+            <rect style="fill:rgb(92,129,116)" width="40" height="20" x="560" y="400"/>
+
+            <!-- 420 disappear -->
+            <rect style="fill:rgb(92,129,116)" width="110" height="20" x="160" y="420"/>
+			<rect style="fill:rgb(92,129,116)" width="20" height="20" x="340" y="420"/>
+			<rect style="fill:rgb(92,129,116)" width="60" height="20" x="540" y="420"/>
+
+            <!-- 440 -->
+            <rect style="fill:rgb(92,129,116)" width="100" height="20" x="140" y="440"/>
+            <rect style="fill:rgb(92,129,116)" width="20" height="20" x="440" y="440"/>
+            <rect style="fill:rgb(92,129,116)" width="60" height="20" x="500" y="440"/>
+
+            <!-- 460 -->
+            <rect style="fill:rgb(92,129,116)" width="60" height="20" x="120" y="460"/>
+            <rect style="fill:rgb(92,129,116)" width="60" height="20" x="400" y="460"/>
+
+            <!-- 480 -->
+            <rect style="fill:rgb(92,129,116)" width="40" height="20" x="0" y="480"/>
+            <rect style="fill:rgb(92,129,116)" width="60" height="20" x="380" y="480"/>
+
+            <!-- 500 -->
+            <rect style="fill:rgb(92,129,116)" width="60" height="20" x="0" y="500"/>
+            <rect style="fill:rgb(92,129,116)" width="20" height="20" x="260" y="500"/>
+
+            <!-- 520 -->
+            <rect style="fill:rgb(92,129,116)" width="80" height="20" x="0" y="520"/>
+            <rect style="fill:rgb(92,129,116)" width="20" height="20" x="140" y="520"/>
+            <rect style="fill:rgb(92,129,116)" width="80" height="20" x="240" y="520"/>
+            <rect style="fill:rgb(92,129,116)" width="20" height="20" x="500" y="520"/>
+
+            <!-- the floor -->
+            <rect style="fill:rgb(92,129,116)" width="600" height="20" x="0" y="540"/>
+        </g>
+		
+		<g id="portal1" transform="translate(560,0)">
+			<ellipse cx="20" cy="8" rx="20" ry="7" fill="url(#gra)"/>
+		</g>
+		<g id="portal2" transform="translate(0,280)">
+			<ellipse cx="8" cy="20" rx="7" ry="20" fill="url(#gra)"/>
+		</g>
+		
+		
+		<g id="exit" transform="translate(0,20)">
+			<rect x="1" y="1" width="38" height="13"
+				 style="fill:rgb(0,255,0);stroke:rgb(0,0,0);stroke-width:1"/>
+			<text x="9px" y="11px" style="fill:rgb(0,0,0);font-size:10;font-family:Arial"
+				transform="translate(9.79 7.42) scale(0.771213 1) translate(-9.79 -7.42) translate(31.02 7.42) scale(0.781869 1) translate(-31.02 -7.42) translate(20.405 11) scale(1 0.561053) translate(-20.405 -11)"
+				>EXIT</text>
+			<rect x="1" y="15" width="19" height="25"
+				 style="fill:rgb(185,236,255);stroke:rgb(0,0,0);stroke-width:1"/>
+			<rect x="21" y="15" width="18" height="25"
+				 style="fill:rgb(185,236,255);stroke:rgb(0,0,0);stroke-width:1"/>
+			<line x1="16" y1="24" x2="16" y2="32"
+				 style="fill:none;stroke:rgb(0,0,0);stroke-width:2"/>
+			<line x1="25" y1="24" x2="25" y2="32"
+				 style="fill:none;stroke:rgb(0,0,0);stroke-width:2"/>
+		</g>
+		
+        <g id="monsters"/>
+        <g id="bullets"/>
+		<g id="boss_bullets"/>
+		<g id="rewards"/>
+		<g id="user_name"/>
+	
+
+        <g id="player">
+          <rect x="0" y="15" width="40" height="25"
+		 style="fill:rgb(38,88,22);stroke:rgb(0,0,0);stroke-width:1"/>
+	<rect x="8" y="0" width="18" height="14"
+		 style="fill:rgb(38,88,22);stroke:rgb(0,0,0);stroke-width:1"/>
+	<rect x="26" y="5" width="14" height="3"
+		 style="fill:rgb(0,0,0);stroke:rgb(0,0,0);stroke-width:1"/>
+	<g style="fill:rgb(255,0,0);stroke:rgb(0,0,0);stroke-width:1">
+		<polygon id="inside"
+			points="17,3 17,7.47312 18.551,7.98925 21,6.09677 17,7.47312 17,9.10753 19.449,11 17,7.47312
+				15.449,7.98925 14.551,10.914 17,7.47312 16.0204,6.09677 13,6.09677 17,7.47312
+				17.898,6.09677"/>
+		<polygon id="outside" style="fill:rgb(255,0,0)"
+			points="17,3 17.898,6.09677 21,6.09677 18.551,7.98925 19.449,11 17,9.10753 14.551,10.914
+				15.449,7.98925 13,6.09677 16.0204,6.09677"/>
+	</g></g>
+        
+      </g>
+    
+        <!--add your highscore table here-->
+	<g id="highscoretable" transform="translate(40,40)" style="visibility:hidden">
+	  <rect width="520" height="480"
+	   style="fill:white;stroke:red;stroke-width:2"/>
+	  <text x="260" y="40"
+	   style="fill:red;font-size:30px;font-weight:bold;text-anchor:middle">
+	    High Score Table
+	  </text>
+	  <text id="highscoretext" y="45" style="fill:black;font-size:20px;font-weight:bold"/>
+	
+	  <rect onclick="top.replay()" x="220" y="450" width="120" height="25" style="fill:white;stroke:blue;stroke-width:2"/>
+	
+	  <text onclick="top.replay()" x="280" y="470"
+	   style="fill:red;font-size:20px;font-weight:bold;text-anchor:middle">
+	    Start Again?
+	  </text>
+	
+	</g>
+	
+	<tspan x="100" dy="40">...name of the player...</tspan>
+	<tspan x="400">...score of the player...</tspan>
+	
+	
+	
+
+    </g>
+  </g>
+  
+  <g id="main">
+  	<defs>
+			<pattern id="Jade_1" x="0" y="0" width="100" height="100"
+				patternUnits="userSpaceOnUse" patternContentUnits="userSpaceOnUse">
+				<g>
+					<polygon style="stroke:rgb(178,212,178);stroke-width:1;stroke-opacity:1;stroke-miterlimit:10;fill:rgb(178,212,178);
+						fill-opacity:1" points="0,0 100,0 100,100 0,100"/>
+					<circle style="stroke:rgb(209,225,209);stroke-width:5;stroke-opacity:1;stroke-miterlimit:10;fill:none;
+						fill-opacity:1" cx="50" cy="50" r="50"
+						transform="matrix(1 0 0 1 -50 49.9)"/>
+					<circle style="stroke:rgb(209,225,209);stroke-width:5;stroke-opacity:1;stroke-miterlimit:10;fill:none;
+						fill-opacity:1" cx="50" cy="50" r="50"
+						transform="matrix(1 0 0 1 49.9 49.9)"/>
+					<circle style="stroke:rgb(209,225,209);stroke-width:5;stroke-opacity:1;stroke-miterlimit:10;fill:none;
+						fill-opacity:1" cx="50" cy="50" r="50"
+						transform="matrix(1 0 0 1 49.7 -49.8)"/>
+					<circle style="stroke:rgb(209,225,209);stroke-width:5;stroke-opacity:1;stroke-miterlimit:10;fill:none;
+						fill-opacity:1" cx="50" cy="50" r="50"
+						transform="matrix(1 0 0 1 -49.9 -49.9)"/>
+					<circle style="stroke:rgb(209,225,209);stroke-width:5;stroke-opacity:1;stroke-miterlimit:10;fill:none;
+						fill-opacity:1" cx="52" cy="52" r="50"
+						transform="matrix(1 0 0 1 -1.8 -2.4)"/>
+				</g>
+			</pattern>
+			<pattern id="Twist-lines" width="100" height="100"
+				patternUnits="userSpaceOnUse" patternContentUnits="userSpaceOnUse">
+				<g>
+					<polyline style="stroke:rgb(255,1,1);stroke-width:2;stroke-opacity:0.4;stroke-miterlimit:10;fill:none;
+						fill-opacity:1" points="99,99 52,48 1,1"/>
+					<polyline style="stroke:rgb(255,31,1);stroke-width:2;stroke-opacity:0.4;stroke-miterlimit:10;fill:none;
+						fill-opacity:1" points="94,94 57,43 6,6"/>
+					<polyline style="stroke:rgb(255,31,1);stroke-width:2;stroke-opacity:0.4;stroke-miterlimit:10;fill:none;
+						fill-opacity:1" points="88,88 63,37 12,12"/>
+					<polyline style="stroke:rgb(255,91,1);stroke-width:2;stroke-opacity:0.4;stroke-miterlimit:10;fill:none;
+						fill-opacity:1" points="82,82 69,31 18,18"/>
+					<polyline style="stroke:rgb(255,121,1);stroke-width:2;stroke-opacity:0.4;stroke-miterlimit:10;fill:none;
+						fill-opacity:1" points="76,76 75,25 24,24"/>
+					<polyline style="stroke:rgb(255,150,1);stroke-width:2;stroke-opacity:0.4;stroke-miterlimit:10;fill:none;
+						fill-opacity:1" points="70,70 81,19 30,30"/>
+					<polyline style="stroke:rgb(255,180,1);stroke-width:2;stroke-opacity:0.4;stroke-miterlimit:10;fill:none;
+						fill-opacity:1" points="64,64 87,13 36,36"/>
+					<polyline style="stroke:rgb(255,210,1);stroke-width:2;stroke-opacity:0.4;stroke-miterlimit:10;fill:none;
+						fill-opacity:1" points="58,58 93,7 42,42"/>
+					<polyline style="stroke:rgb(255,240,1);stroke-width:2;stroke-opacity:0.4;stroke-miterlimit:10;fill:none;
+						fill-opacity:1" points="52,52 99,1 48,48"/>
+					<polyline style="stroke:rgb(255,1,1);stroke-width:2;stroke-opacity:0.4;stroke-miterlimit:10;fill:none;
+						fill-opacity:1" points="1,1 48,52 99,99"/>
+					<polyline style="stroke:rgb(255,31,1);stroke-width:2;stroke-opacity:0.4;stroke-miterlimit:10;fill:none;
+						fill-opacity:1" points="6,6 43,57 94,94"/>
+					<polyline style="stroke:rgb(255,61,1);stroke-width:2;stroke-opacity:0.4;stroke-miterlimit:10;fill:none;
+						fill-opacity:1" points="12,12 37,63 88,88"/>
+					<polyline style="stroke:rgb(255,91,1);stroke-width:2;stroke-opacity:0.4;stroke-miterlimit:10;fill:none;
+						fill-opacity:1" points="18,18 31,69 82,82"/>
+					<polyline style="stroke:rgb(255,121,1);stroke-width:2;stroke-opacity:0.4;stroke-miterlimit:10;fill:none;
+						fill-opacity:1" points="24,24 25,75 76,76"/>
+					<polyline style="stroke:rgb(255,150,1);stroke-width:2;stroke-opacity:0.4;stroke-miterlimit:10;fill:none;
+						fill-opacity:1" points="30,30 19,81 70,70"/>
+					<polyline style="stroke:rgb(255,180,1);stroke-width:2;stroke-opacity:0.4;stroke-miterlimit:10;fill:none;
+						fill-opacity:1" points="36,36 13,87 64,64"/>
+					<polyline style="stroke:rgb(255,210,1);stroke-width:2;stroke-opacity:0.4;stroke-miterlimit:10;fill:none;
+						fill-opacity:1" points="42,42 7,93 58,58"/>
+					<polyline style="stroke:rgb(255,240,1);stroke-width:2;stroke-opacity:0.4;stroke-miterlimit:10;fill:none;
+						fill-opacity:1" points="48,48 1,99 52,52"/>
+				</g>
+			</pattern>
+			<pattern id="Jade" x="0" y="0" width="100" height="100"
+				patternUnits="userSpaceOnUse" patternContentUnits="userSpaceOnUse">
+				<g>
+					<polygon style="stroke:rgb(178,212,178);stroke-width:1;stroke-opacity:1;stroke-miterlimit:10;fill:rgb(178,212,178);
+						fill-opacity:1" points="0,0 100,0 100,100 0,100"/>
+					<circle style="stroke:rgb(209,225,209);stroke-width:5;stroke-opacity:1;stroke-miterlimit:10;fill:none;
+						fill-opacity:1" cx="50" cy="50" r="50"
+						transform="matrix(1 0 0 1 -50 49.9)"/>
+					<circle style="stroke:rgb(209,225,209);stroke-width:5;stroke-opacity:1;stroke-miterlimit:10;fill:none;
+						fill-opacity:1" cx="50" cy="50" r="50"
+						transform="matrix(1 0 0 1 49.9 49.9)"/>
+					<circle style="stroke:rgb(209,225,209);stroke-width:5;stroke-opacity:1;stroke-miterlimit:10;fill:none;
+						fill-opacity:1" cx="50" cy="50" r="50"
+						transform="matrix(1 0 0 1 49.7 -49.8)"/>
+					<circle style="stroke:rgb(209,225,209);stroke-width:5;stroke-opacity:1;stroke-miterlimit:10;fill:none;
+						fill-opacity:1" cx="50" cy="50" r="50"
+						transform="matrix(1 0 0 1 -49.9 -49.9)"/>
+					<circle style="stroke:rgb(209,225,209);stroke-width:5;stroke-opacity:1;stroke-miterlimit:10;fill:none;
+						fill-opacity:1" cx="52" cy="52" r="50"
+						transform="matrix(1 0 0 1 -1.8 -2.4)"/>
+				</g>
+			</pattern>
+			<pattern id="Bad-Shirt" width="200" height="200" patternUnits="userSpaceOnUse"
+				patternContentUnits="userSpaceOnUse">
+				<g>
+					<polygon style="fill:rgb(255,255,255);fill-opacity:1"
+						points="0,0 200,0 200,200 0,200"/>
+					<g>
+						<polygon style="fill:rgb(131,170,229);fill-opacity:1"
+							points="12,0 25,50 12,100 0,50"/>
+						<polygon style="fill:rgb(0,0,88);fill-opacity:1"
+							points="37,0 50,50 37,100 25,50"/>
+						<polygon style="fill:rgb(144,80,38);fill-opacity:1"
+							points="62,0 75,50 62,100 50,50"/>
+						<polygon style="fill:rgb(210,188,122);fill-opacity:1"
+							points="87,0 100,50 87,100 75,50"/>
+					</g>
+					<g>
+						<polygon style="fill:rgb(210,188,122);fill-opacity:1"
+							points="200,13 150,25 100,13 150,0"/>
+						<polygon style="fill:rgb(144,80,38);fill-opacity:1"
+							points="200,38 150,50 100,38 150,25"/>
+						<polygon style="fill:rgb(0,0,88);fill-opacity:1"
+							points="200,63 150,75 100,63 150,50"/>
+						<polygon style="fill:rgb(131,170,229);fill-opacity:1"
+							points="200,88 150,100 100,88 150,75"/>
+					</g>
+					<g>
+						<polygon style="fill:rgb(210,188,122);fill-opacity:1"
+							points="100,113 50,125 0,113 50,100"/>
+						<polygon style="fill:rgb(144,80,38);fill-opacity:1"
+							points="100,138 50,150 0,138 50,125"/>
+						<polygon style="fill:rgb(0,0,88);fill-opacity:1"
+							points="100,163 50,175 0,163 50,150"/>
+						<polygon style="fill:rgb(131,170,229);fill-opacity:1"
+							points="100,188 50,200 0,188 50,175"/>
+					</g>
+					<g>
+						<polygon style="fill:rgb(131,170,229);fill-opacity:1"
+							points="112,100 125,150 112,200 100,150"/>
+						<polygon style="fill:rgb(0,0,88);fill-opacity:1"
+							points="137,100 150,150 137,200 125,150"/>
+						<polygon style="fill:rgb(144,80,38);fill-opacity:1"
+							points="162,100 175,150 162,200 150,150"/>
+						<polygon style="fill:rgb(210,188,122);fill-opacity:1"
+							points="187,100 200,150 187,200 175,150"/>
+					</g>
+				</g>
+			</pattern>
+			<pattern id="Argyle" width="50" height="50" patternUnits="userSpaceOnUse"
+				patternContentUnits="userSpaceOnUse">
+				<g>
+					<polygon style="stroke:rgb(112,97,66);stroke-width:1;stroke-opacity:1;stroke-miterlimit:30;fill:rgb(215,207,189);
+						fill-opacity:1" points="25,10 34,25 25,40 16,25"/>
+					<polygon style="stroke:rgb(112,97,66);stroke-width:1;stroke-opacity:1;stroke-miterlimit:30;fill:rgb(215,207,189);
+						fill-opacity:1" points="50,10 59,25 50,40 41,25"/>
+					<polygon style="stroke:rgb(112,97,66);stroke-width:1;stroke-opacity:1;stroke-miterlimit:30;fill:rgb(215,207,189);
+						fill-opacity:1" points="0,10 9,25 0,40 -9,25"/>
+					<polygon style="stroke:rgb(52,48,40);stroke-width:1;stroke-opacity:1;stroke-miterlimit:30;fill:rgb(172,152,112);
+						fill-opacity:1" points="11,0 21,25 11,50 1,25"/>
+					<polygon style="stroke:rgb(52,48,40);stroke-width:1;stroke-opacity:1;stroke-miterlimit:30;fill:rgb(172,152,112);
+						fill-opacity:1" points="39,0 49,25 39,50 29,25"/>
+					<polygon style="stroke:rgb(112,97,66);stroke-width:1;stroke-opacity:1;stroke-miterlimit:30;fill:rgb(112,97,66);
+						fill-opacity:1" points="20,0 30,0 25,9"/>
+					<polygon style="stroke:rgb(112,97,66);stroke-width:1;stroke-opacity:1;stroke-miterlimit:30;fill:rgb(112,97,66);
+						fill-opacity:1" points="20,50 25,41 30,50"/>
+				</g>
+			</pattern>
+		</defs>
+		<rect x="5" y="5" width="795" height="595"
+			 style="fill:url(#Jade_1);stroke:rgb(0,0,0);stroke-width:5"/>
+		<text x="234px" y="44px"
+			transform="translate(234.552 26.528) scale(1.61171 1.05769) translate(-234.552 -26.528) translate(331.152 26.528) scale(1 3.23625) translate(-331.152 -26.528) translate(331.152 26.528) scale(1 0.831463) translate(-331.152 -26.528) translate(427.752 37.784) scale(1.03754 1) translate(-427.752 -37.784) translate(427.752 37.784) scale(1.02814 1) translate(-427.752 -37.784) translate(234.552 37.784) scale(1.10166 1) translate(-234.552 -37.784) translate(234.552 37.784) scale(1.03549 1) translate(-234.552 -37.784) translate(427.752 37.784) scale(1.05827 1) translate(-427.752 -37.784) translate(331.152 26.528) scale(1 0.797301) translate(-331.152 -26.528)"
+			
+			 style="fill:rgb(0,0,0);font-size:24;font-family:Arial">The Tank Fighter</text>
+		<text x="124px" y="165px" transform="translate(-26 -44)"
+			 style="fill:rgb(0,0,0);font-size:24;font-family:@Malgun Gothic">You are controling a tank. You need to kill the people.</text>
+		<text x="100px" y="184px" style="fill:rgb(0,0,0);font-size:24;font-family:@Malgun Gothic">You need to pick up as many medical kits as you can.</text>
+		<text x="102px" y="267px" style="fill:rgb(0,0,0);font-size:24;font-family:@Malgun Gothic">Use W to jump, A to move left, D to move right, and space bar to shoot.</text>
+		<text x="105px" y="319px" transform="translate(-1.17647 14.1176)"
+			 style="fill:rgb(0,0,0);font-size:24;font-family:@Malgun Gothic">Press C to enter cheat mode, V to exit cheat mode (if in cheat mode).</text>
+		<text x="106px" y="380px" transform="translate(0 6.66667)"
+			 style="fill:rgb(0,0,0);font-size:24;font-family:@Malgun Gothic">Collect medical kits and go to exit quickly.</text>
+		<text x="110px" y="418px" transform="translate(0 16)"
+			 style="fill:rgb(0,0,0);font-size:24;font-family:@Malgun Gothic">You can earn double points in the zoom mode.</text>
+		
+		<rect onclick="top.check_mode(0)" x="86" y="462" width="196" height="75"
+			 style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1"/>
+		<rect onclick="top.check_mode(1)" x="492" y="462" width="196" height="75"
+			 style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1"/>
+		<text onclick="top.check_mode(0)" x="135px" y="505px" style="fill:rgb(0,0,0);font-size:24;font-family:@Malgun Gothic">Normal Mode</text>
+		
+		<text onclick="top.check_mode(1)" x="550px" y="505px" style="fill:rgb(0,0,0);font-size:24;font-family:@Malgun Gothic">Zoom Mode</text>
+		
+		<g transform="translate(650 50) scale(2 2)">
+			<path transform="translate(0 40) scale(1 -1)"
+				d="M0 30 C0 10 6.66667 0 20 0 C33.3333 0 40 10 40 30 L40 40 L35 33 L30 40 L25 33 L20
+					40 L15 33 L10 40 L5 33 L0 40 L0 30"
+				 style="fill:rgb(56,34,14);fill-opacity:1;stroke:rgb(0,0,0);stroke-width:2"/>
+			<circle cx="12" cy="20" r="5" style="fill:rgb(255,0,0);stroke:rgb(0,0,0);stroke-width:2">
+				<animateColor attributeName="fill" dur="1s" repeatCount="indefinite"
+					values="rgb(255,255,0);rgb(255,0,0);rgb(255,255,0)"/>
+			</circle>
+			<circle cx="28" cy="20" r="5" style="fill:rgb(255,0,0);stroke:rgb(0,0,0);stroke-width:2">
+				<animateColor attributeName="fill" dur="1s" repeatCount="indefinite"
+					values="rgb(255,255,0);rgb(255,0,0);rgb(255,255,0)"/>
+			</circle>
+			<line x1="7" y1="9" x2="17" y2="10" style="fill:none;stroke:rgb(0,0,0);stroke-width:1"/>
+			<line x1="25" y1="11" x2="34" y2="10"
+				 style="fill:none;stroke:rgb(0,0,0);stroke-width:1"/>
+			<line x1="20" y1="21" x2="17" y2="29"
+				 style="fill:none;stroke:rgb(0,0,0);stroke-width:1"/>
+			<line x1="17" y1="29" x2="24" y2="29"
+				 style="fill:none;stroke:rgb(0,0,0);stroke-width:1"/>
+			<line x1="19" y1="34" x2="13" y2="33"
+				 style="fill:none;stroke:rgb(255,165,0);stroke-width:2"/>
+			<line x1="13" y1="33" x2="2" y2="31"
+				 style="fill:none;stroke:rgb(255,255,255);stroke-width:2"/>
+		</g>
+		
+		<g transform="translate(600 300) scale(3 3)">
+			<rect x="0" y="15" width="40" height="25"
+				 style="fill:rgb(38,88,22);stroke:rgb(0,0,0);stroke-width:1"/>
+			<rect x="8" y="0" width="18" height="14"
+				 style="fill:rgb(38,88,22);stroke:rgb(0,0,0);stroke-width:1"/>
+			<rect x="26" y="5" width="14" height="3"
+				 style="fill:rgb(0,0,0);stroke:rgb(0,0,0);stroke-width:1"/>
+			<g style="fill:rgb(255,0,0);stroke:rgb(0,0,0);stroke-width:1">
+				<polygon id="inside"
+					points="17,3 17,7.47312 18.551,7.98925 21,6.09677 17,7.47312 17,9.10753 19.449,11 17,7.47312
+						15.449,7.98925 14.551,10.914 17,7.47312 16.0204,6.09677 13,6.09677 17,7.47312
+						17.898,6.09677"/>
+				<polygon id="outside" style="fill:rgb(255,0,0)"
+					points="17,3 17.898,6.09677 21,6.09677 18.551,7.98925 19.449,11 17,9.10753 14.551,10.914
+						15.449,7.98925 13,6.09677 16.0204,6.09677"/>
+			</g>
+		</g>
+  </g>
+  
+  
+  
+</svg>
